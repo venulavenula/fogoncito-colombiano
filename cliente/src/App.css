@@ -1,0 +1,375 @@
+/* ---------- Estructura ---------- */
+.pagina {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 24px 56px;
+}
+
+.centro { text-align: center; }
+
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 24px;
+  padding: 4px 32px;
+  background: rgba(169, 47, 24, 0.97);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo img { display: block; width: 84px; height: auto; }
+
+.cabecera ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cabecera nav a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: var(--crema);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cabecera nav a:hover { background: #df8b7a; color: var(--cafe); }
+.cabecera nav a.active { background: var(--cafe); }
+.cabecera a:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; }
+
+.insignia {
+  display: inline-block;
+  min-width: 22px;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 11px;
+  background: var(--amarillo);
+  color: var(--cafe);
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.pie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px;
+  border-top: 3px solid var(--naranja);
+}
+
+.pie img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; }
+.pie p { margin: 0; color: var(--cafe); font-style: italic; }
+
+/* ---------- Botones y mensajes ---------- */
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid var(--rojo);
+  border-radius: 6px;
+  background: var(--rojo);
+  color: var(--crema);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton:hover:not(:disabled) { background: var(--amarillo); border-color: var(--amarillo); color: var(--cafe); }
+.boton:focus-visible, .filtro:focus-visible, .boton-redondo:focus-visible { outline: 3px solid var(--cafe); outline-offset: 2px; }
+.boton:disabled { opacity: 0.6; cursor: not-allowed; }
+.boton.secundario { background: transparent; color: var(--rojo); }
+.boton.secundario:hover:not(:disabled) { background: var(--amarillo); border-color: var(--amarillo); color: var(--cafe); }
+.boton.amarillo { background: var(--amarillo); border-color: var(--amarillo); color: var(--cafe); }
+.boton.amarillo:hover { background: var(--crema); border-color: var(--cafe); }
+
+.acciones { display: flex; flex-wrap: wrap; gap: 12px; }
+.acciones.centro { justify-content: center; margin-top: 24px; }
+
+.error, .exito {
+  padding: 12px 16px;
+  border: 2px solid var(--rojo);
+  border-radius: 6px;
+  color: var(--rojo);
+  font-weight: 600;
+}
+
+.exito { border-color: #3e6b2f; color: #2f5222; }
+
+.aviso {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  max-width: calc(100% - 40px);
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: var(--cafe);
+  color: var(--crema);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.aviso a { margin-left: 8px; color: var(--amarillo); font-weight: 600; }
+
+/* ---------- Inicio ---------- */
+.banner { display: block; width: auto; max-width: 100%; height: auto; margin: 0 auto; border-radius: 8px; }
+.presentacion { margin: 24px 0 32px; text-align: center; }
+.presentacion p { margin: 0; font-style: italic; color: var(--cafe); }
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.plato {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  background: #db7536;
+  text-align: center;
+}
+
+.plato img { width: 100%; height: 180px; border-radius: 10px; object-fit: cover; }
+.plato h3 { margin: 14px 0 8px; color: #830000; }
+.plato p { flex: 1; margin-bottom: 8px; }
+.plato .precio { flex: none; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; color: var(--cafe); }
+.plato .boton { align-self: center; }
+
+/* ---------- Ventanas (dialog) ---------- */
+.dialogo {
+  max-width: calc(100% - 24px);
+  max-height: calc(100% - 24px);
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: #fff;
+  color: #000;
+}
+
+.dialogo::backdrop { background: rgba(0, 0, 0, 0.5); }
+
+.bienvenida { width: 600px; overflow: visible; }
+.bienvenida-cuerpo { position: relative; padding: 90px 32px 36px; text-align: center; }
+.mascota { position: absolute; top: -75px; left: 50%; width: 140px; transform: translateX(-50%); }
+.bienvenida h2 { color: var(--rojo); }
+
+.cerrar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #f5f5f5;
+  color: var(--naranja);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.editor { width: 680px; }
+.editor-cuerpo { padding: 24px; }
+
+/* ---------- Formulario y campos ---------- */
+.panel {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.panel h1 { text-align: center; }
+.descripcion { text-align: center; color: var(--cafe); }
+
+.seccion {
+  margin: 0 0 24px;
+  padding: 16px 20px;
+  border: none;
+  border-left: 5px solid var(--naranja);
+  border-radius: 12px;
+  background: var(--crema);
+}
+
+.seccion legend {
+  float: left;
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--rojo);
+}
+
+.seccion legend + * { clear: both; }
+
+label { display: block; margin-bottom: 6px; font-weight: 600; color: var(--cafe); }
+
+input[type='text'], input[type='tel'], select {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 11px;
+  border: 1px solid #d8bda5;
+  border-radius: 7px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input:focus-visible, select:focus-visible { outline: 3px solid var(--naranja); outline-offset: 1px; border-color: var(--rojo); }
+
+/* Selector de platos */
+.selector { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 0; padding: 0; list-style: none; }
+
+.selector li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.selector li.elegido { border-color: var(--naranja); }
+.selector img { width: 56px; height: 56px; flex-shrink: 0; border-radius: 8px; object-fit: cover; }
+.selector-info { display: flex; flex: 1; flex-direction: column; min-width: 0; line-height: 1.3; }
+.selector-info span { color: var(--cafe); }
+.cantidad { display: flex; align-items: center; gap: 8px; }
+.cantidad output { min-width: 24px; font-weight: 700; text-align: center; }
+
+.boton-redondo {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: var(--rojo);
+  color: var(--crema);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.boton-redondo:hover:not(:disabled) { background: var(--amarillo); color: var(--cafe); }
+.boton-redondo:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* Resumen */
+.resumen { margin-bottom: 8px; padding: 16px 20px; border: 2px solid var(--naranja); border-radius: 12px; background: var(--crema); }
+.resumen h3 { color: var(--cafe); }
+.pista { margin: 12px 0 0; color: var(--rojo); font-weight: 600; }
+
+/* Estado del pedido en la ventana de edición */
+.estados { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.opcion-estado {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 16px;
+  border: 2px solid var(--naranja);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.opcion-estado.activa { background: var(--cafe); border-color: var(--cafe); color: var(--crema); }
+.opcion-estado:has(:focus-visible) { outline: 3px solid var(--amarillo); outline-offset: 2px; }
+
+.confirmacion { text-align: center; }
+.mascota-confirmacion { width: 110px; }
+
+/* ---------- Visor de pedidos ---------- */
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+
+.filtro {
+  padding: 6px 16px;
+  border: 2px solid var(--naranja);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cafe);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filtro.activo { background: var(--naranja); color: #fff; }
+
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.tarjeta { border: 3px solid var(--naranja); border-radius: 8px; overflow: hidden; }
+
+.tarjeta-cinta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+  background: var(--naranja);
+  font-weight: 600;
+}
+
+.estado { padding: 0 12px; border-radius: 999px; font-size: 14px; line-height: 24px; color: #fff; }
+.estado.pendiente { background: var(--amarillo); color: var(--cafe); }
+.estado.en-camino { background: var(--cafe); }
+.estado.entregado { background: #3e6b2f; }
+
+.tarjeta-cuerpo { padding: 16px; }
+
+.contacto { display: flex; flex-direction: column; gap: 2px; margin: -4px 0 12px; font-size: 15px; }
+.contacto small { color: var(--cafe); }
+
+.platos { list-style: none; margin: 0 0 16px; padding: 0; }
+.platos li { display: flex; align-items: baseline; gap: 8px; padding: 6px 0; }
+.platos small { display: block; font-size: 14px; }
+.relleno { flex: 1; min-width: 16px; border-bottom: 2px dotted var(--naranja); }
+
+.cuenta { margin: 0 0 16px; padding-top: 12px; border-top: 2px solid var(--naranja); }
+.resumen .cuenta { margin-bottom: 0; padding-top: 0; border-top: none; }
+.cuenta div { display: flex; justify-content: space-between; gap: 12px; padding: 2px 0; }
+.cuenta dt, .cuenta dd { margin: 0; }
+.descuento { color: var(--rojo); font-weight: 600; }
+
+.cuenta .total {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 2px solid var(--naranja);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--rojo);
+}
+
+@media (max-width: 640px) {
+  h1 { font-size: 32px; }
+  .cabecera { padding: 4px 12px; justify-content: center; }
+  .pagina { padding: 16px 12px 40px; }
+  .panel { padding: 18px; }
+  .selector { grid-template-columns: 1fr; }
+  .bienvenida-cuerpo { padding: 75px 20px 28px; }
+  .mascota { width: 110px; top: -55px; }
+  .editor-cuerpo { padding: 16px; }
+  .acciones .boton { flex: 1; text-align: center; }
+}

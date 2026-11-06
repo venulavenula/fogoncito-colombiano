@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g fill="none" stroke="#D96B27" stroke-width="3" stroke-linecap="round">
+    <path d="M24 22 q-5 -5 0 -10" />
+    <path d="M32 22 q-5 -5 0 -10" />
+    <path d="M40 22 q-5 -5 0 -10" />
+  </g>
+  <path d="M8 30 H56 A24 24 0 0 1 8 30 Z" fill="#A92F18" />
+  <ellipse cx="32" cy="30" rx="24" ry="5" fill="#F2A900" stroke="#6D2918" stroke-width="2" />
+  <rect x="22" y="52" width="20" height="5" rx="2" fill="#6D2918" />
+</svg>

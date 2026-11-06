@@ -1,0 +1,122 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "nombre": "Bandeja paisa",
+      "descripcion": "Plato típico representativo de la región de Antioquia y de toda Colombia, un plato muy abundante.",
+      "precio": 25000,
+      "imagen": "/imagenes/001.jpeg"
+    },
+    {
+      "id": 2,
+      "nombre": "Ajiaco Santafereño",
+      "descripcion": "Plato típico de Santafé de Bogotá, preparado con carne de res, papas, arroz y otros ingredientes.",
+      "precio": 22000,
+      "imagen": "/imagenes/002.jpeg"
+    },
+    {
+      "id": 3,
+      "nombre": "Lechona",
+      "descripcion": "Preparada con carne de cerdo, arroz y otros ingredientes.",
+      "precio": 18000,
+      "imagen": "/imagenes/lechona.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Tamales",
+      "descripcion": "Preparados con masa de maíz y relleno de carne o pollo.",
+      "precio": 18000,
+      "imagen": "/imagenes/tamales.jpeg"
+    },
+    {
+      "id": 5,
+      "nombre": "Arroz Mixto",
+      "descripcion": "Preparado con arroz, verduras, pollo y salchichas.",
+      "precio": 20000,
+      "imagen": "/imagenes/arroz.jpeg"
+    },
+    {
+      "id": 6,
+      "nombre": "Sancocho",
+      "descripcion": "Preparado con carne de res o cerdo, arroz y otros ingredientes.",
+      "precio": 23000,
+      "imagen": "/imagenes/sancocho.jpeg"
+    }
+  ],
+  "domicilios": [
+    { "id": 1, "zona": "Urbana", "costo": 6000 },
+    { "id": 2, "zona": "Rural", "costo": 10000 },
+    { "id": 3, "zona": "Foránea", "costo": 20000 }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "cliente": "Julián",
+      "telefono": "300 111 2233",
+      "direccion": "Calle 10 # 20-30",
+      "domicilioId": 1,
+      "estado": "Entregado",
+      "fecha": "2026-11-05T12:15:00.000Z",
+      "productos": [
+        { "platoId": 1, "cantidad": 1 },
+        { "platoId": 4, "cantidad": 1 },
+        { "platoId": 3, "cantidad": 1 }
+      ]
+    },
+    {
+      "id": 2,
+      "cliente": "María",
+      "telefono": "310 222 3344",
+      "direccion": "Vereda El Rosal, finca La Esperanza",
+      "domicilioId": 2,
+      "estado": "En camino",
+      "fecha": "2026-11-05T13:40:00.000Z",
+      "productos": [
+        { "platoId": 2, "cantidad": 1 },
+        { "platoId": 5, "cantidad": 1 }
+      ]
+    },
+    {
+      "id": 3,
+      "cliente": "Pedro",
+      "telefono": "320 333 4455",
+      "direccion": "Carrera 7 # 45-12, otro municipio",
+      "domicilioId": 3,
+      "estado": "Pendiente",
+      "fecha": "2026-11-05T18:05:00.000Z",
+      "productos": [
+        { "platoId": 1, "cantidad": 1 },
+        { "platoId": 2, "cantidad": 1 },
+        { "platoId": 4, "cantidad": 1 },
+        { "platoId": 6, "cantidad": 1 },
+        { "platoId": 5, "cantidad": 1 }
+      ]
+    },
+    {
+      "id": 4,
+      "cliente": "Ana",
+      "telefono": "315 444 5566",
+      "direccion": "Avenida 80 # 33-21",
+      "domicilioId": 1,
+      "estado": "Pendiente",
+      "fecha": "2026-11-05T18:30:00.000Z",
+      "productos": [
+        { "platoId": 6, "cantidad": 2 },
+        { "platoId": 3, "cantidad": 1 }
+      ]
+    },
+    {
+      "id": 5,
+      "cliente": "Camilo",
+      "telefono": "301 555 6677",
+      "direccion": "Vereda La Cumbre, km 4",
+      "domicilioId": 2,
+      "estado": "En camino",
+      "fecha": "2026-11-05T19:10:00.000Z",
+      "productos": [
+        { "platoId": 5, "cantidad": 3 },
+        { "platoId": 2, "cantidad": 2 }
+      ]
+    }
+  ]
+}
